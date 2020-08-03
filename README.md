@@ -1,6 +1,17 @@
 # SejongRCV-Outdoor
 NAVER LABS Mapping &amp; Localization Challenge
 
+## How to run
+
+### pangyo
+```
+OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python opt_GeM_2_odometry_real_test_netvlad_superglue_pnp.py --checkpoint (checkpoint_path)
+```
+
+### yeouido
+```
+OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python odometry_real_yeouido_test_netvlad_superglue_pnp.py --checkpoint (checkpoint_path)
+```
 
 
 ## Data Tree
