@@ -98,11 +98,6 @@ img_dir = 'pangyo/train/images/left'
 und_img_dir = 'pangyo/train/images/left_undistort'
 img_list_txt = "image_list_total.txt"
 
-position_db = np.load('./pangyo_position_DB.npy')
-position_test = np.load('./pangyo_position_test.npy')
-pose_db = np.load('./pangyo_pose_DB.npy')
-pose_test = np.load('./pangyo_pose_Test.npy')
-
 pickle_name = 'Pretrained_Total_knn_pickle'
 DB_cache_name = 'Pretrained_Total_DB_cache.hdf5'
 top_k = 20
@@ -111,7 +106,7 @@ file_list = sorted(glob.glob("./data/naver/pangyo/test/pangyo*/"))
 odmetry_list = sorted(glob.glob("./data/naver/pangyo/test/**/odometry.txt"))
 
 file_path = "data/naver/submit_example.json"
-out_path = "data/naver/submit_pangyo_Pretrained_odometry_top10_only_0.json"
+out_path = "data/naver/submit_pangyo.json"
 
 # # Naver
 # RGB_mean = [0.389, 0.393, 0.392]
@@ -283,10 +278,7 @@ if __name__ == "__main__":
         print("===> Loading Dataset")
         dataset = Naver_Datasets(input_transform=input_transform)
         dataset_img = Naver_Datasets_IMG(input_transform=input_transform)
-        test_dataset_img = Naver_Datasets_IMG(input_transform=input_transform)
         imgDataLoader = DataLoader(dataset_img, num_workers=workers, batch_size=cacheBatchSize, shuffle=False, pin_memory=True)
-        test_imgDataLoader = DataLoader(test_dataset_img, num_workers=workers, batch_size=cacheBatchSize, shuffle=False, pin_memory=True)
-        print("Done")
 
         if not exists(join(DB_ROOT, 'centroids', pickle_name)) :
 
