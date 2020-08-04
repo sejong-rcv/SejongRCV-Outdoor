@@ -1,0 +1,54 @@
+{
+    "SuperGlue": 
+    {
+
+        "config": 
+        {
+            "superpoint": 
+            {
+                "nms_radius": 3,
+                "keypoint_threshold": 0.005,
+                "max_keypoints": 2048
+            },
+
+            "superglue": 
+            {
+                "weights": "outdoor",
+                "sinkhorn_iterations": 20,
+                "match_threshold": 0.2
+            }
+        }
+    },
+
+    "NetVLAD" :
+    {  
+        "cacheRefreshRate" : 100,
+        "cacheBatchSize" : 20,
+        "batchSize" : 8,
+        "workers" : 8,
+
+        "resume" : "",
+        "num_clusters" : 64,
+        "optima_str" : "SGD",
+
+        "encoder_dim" : 512,
+
+        "evalEvery" : 10,
+        "seed" : 9,
+        "lr" : 0.0001,
+        "momentum" : 0.9,
+        "weightDecay" : 0.001 ,
+        "lrStep" : 5,
+        "lrGamma" : 0.5,
+        "start_epoch" : 0,
+        "nEpochs" : 30,
+        "margin" : 0.1
+    },
+
+    "APGeM":
+    {
+        "Path1" : "../jobs/weight/Resnet101-AP-GeM-LM18.pt",
+        "Path2" : "../jobs/weight/Resnet-101-AP-GeM.pt"
+    }
+
+}

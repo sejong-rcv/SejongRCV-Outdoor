@@ -13,18 +13,18 @@ from scipy import spatial
 
 class Lidar_parse :
 
-    def __init__(self) :
+    def __init__(self, place='pangyo') :
 
         # set the dataset root directory
         DATA_ROOT = 'data/naver'
         calib = json.load(open(os.path.join(DATA_ROOT, 'calibration.json'), 'r'))
 
-        self.images_path = os.path.join(DATA_ROOT, 'pangyo', 'train', 'images')
+        self.images_path = os.path.join(DATA_ROOT, place, 'train', 'images')
         self.lcam_poses = np.loadtxt(os.path.join(self.images_path, 'poses.txt')).reshape(-1, 4, 4)
         self.lcam_timestamps = np.loadtxt(os.path.join(self.images_path,'timestamps.txt'))
         #print('We have %d left images w/ poses'%(len(self.lcam_poses)))
 
-        self.lidar_path = os.path.join(DATA_ROOT, 'pangyo', 'train', 'lidars')
+        self.lidar_path = os.path.join(DATA_ROOT, place, 'train', 'lidars')
         self.lidar_poses = np.loadtxt(os.path.join(self.lidar_path, 'poses.txt')).reshape(-1, 4, 4)
         self.lidar_timestamps = np.loadtxt(os.path.join(self.lidar_path, 'timestamps.txt'))
         #print('We have %d lidar w/ poses'%(len(self.lidar_poses)))
@@ -111,4 +111,28 @@ class Lidar_parse :
         uv, cam_pnts, merged_pnts = self.slow_and_naive_hidden_point_removal(uv, cam_pnts, merged_pnts)
 
         return uv, cam_pnts, veh_pose, merged_pnts
+
+
+    def matching_2d_3d(self, idx, query_xy, db_xy):
+        uv, cam_pnts, veh_pose, merge_pnts = self.parsing(idx)
+        tree = spatial.KDTree(uv[:,:2])
+
+        out_index = []
+        fileter_db_xy = []
+        fileter_query_xy = []
+
+        for idx in range(len(query_xy)) :
+            distance_tree, index = tree.query(db_xy[idx])
+            if distance_tree < 1 :
+                out_index.append(index)
+                fileter_db_xy.append(db_xy[idx])
+                fileter_query_xy.append(query_xy[idx])
+
+        fileter_db_xy = np.asarray(fileter_db_xy)
+        fileter_query_xy = np.asarray(fileter_query_xy)
+
+        
+
+        return merge_pnts[out_index,:][:,:3], fileter_query_xy
+
 
