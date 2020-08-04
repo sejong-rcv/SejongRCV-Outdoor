@@ -3,21 +3,17 @@ NAVER LABS Mapping &amp; Localization Challenge
 
 ## How to run
 
-### pangyo
+### test
 ```
-OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python opt_GeM_2_odometry_real_test_netvlad_superglue_pnp.py --checkpoint (checkpoint_path)
+OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeuido] --top_k 10 --DB_ROOT (DB_ROOT)
 ```
-
-### yeouido
-```
-OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python odometry_real_yeouido_test_netvlad_superglue_pnp.py --checkpoint (checkpoint_path)
-```
-
 
 ## Data Tree
 ```
 +-- data
+|   +-- pangyo_pose_total.npy  pangyo_position_total.npy  yeouido_pose_total.npy  yeouido_position_total.npy
 |   +-- naver
+|       +-- submit_json.json
 |       +-- centriods
 |           +-- GeM_2_Pretrained_Total_DB_cache.hdf5
 |           +-- GeM_2_Pretrained_Total_knn_pickle
