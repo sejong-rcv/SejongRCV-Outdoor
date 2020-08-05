@@ -99,7 +99,7 @@ class global_descriptor:
         GeM.eval()
         return GeM
 
-    def make_cache(self, DB_cache_name, pickle_name, model, dataset, imgDataLoader, model1=None, model2=None):
+    def make_cache(self, DB_cache_name, pickle_name, model, imgDataLoader, model1=None, model2=None):
 
         
         if not exists(join(self.DB_ROOT, 'centroids', pickle_name)) :
@@ -107,8 +107,8 @@ class global_descriptor:
             if not exists(join(self.DB_ROOT, 'centroids', DB_cache_name)) :
                 
                 print("===> Making Cache")
-                dataset.cache = join(self.DB_ROOT, 'centroids', DB_cache_name)
-                with h5py.File(dataset.cache, mode='w') as h5: 
+                dataset_cache = join(self.DB_ROOT, 'centroids', DB_cache_name)
+                with h5py.File(dataset_cache, mode='w') as h5: 
                     if model1 is not None and model2 is not None:
                         # pool_size = self.encoder_dim * self.num_clusters + 1024*2
                         pool_size=36864
