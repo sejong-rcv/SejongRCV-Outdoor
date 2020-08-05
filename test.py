@@ -170,7 +170,7 @@ if __name__ == "__main__":
             query_xy, db_xy, mconf = matching_2d(query_path, img_candidate_path, matching, device, scale=True)
             good_match_3d_point, fileter_query_xy = Lidar.matching_2d_3d(int(images[max_index][:-4]), query_xy, db_xy)
 
-            pred_query_qwxyz, pred_query_xyz, inlier = pnp(good_match_3d_point, fileter_query_xy,pose, int(images[max_index][:-4]),odmetry, 49-tt, LCam_K, LCam_RT)
+            pred_query_qwxyz, pred_query_xyz, inlier = pnp(good_match_3d_point, fileter_query_xy,pose, int(images[max_index][:-4]),odmetry, pred_query_qwxyz, pred_query_xyz, inlier = pnp(good_match_3d_point, fileter_query_xy,pose, int(images[max_index][:-4]),odmetry, max_qeury, LCam_K, LCam_RT), LCam_K, LCam_RT)
 
             set_name = file_list[i][25:33]
             json_data = dump_submit(json_data, out_path, place, set_name, \
