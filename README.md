@@ -121,8 +121,8 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 
 ### Reference
 
-[NAVER LABS DATA](https://challenge.naverlabs.com/)
-[Preprocessing](https://github.com/naverlabs/mapping-and-localization-challenge/blob/master/labs_outdoor_dataset_tutorial.ipynb)
-[NetVLAD](https://github.com/Nanne/pytorch-NetVlad)
-[SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork)
+[NAVER LABS DATA](https://challenge.naverlabs.com/) </br>
+[Preprocessing](https://github.com/naverlabs/mapping-and-localization-challenge/blob/master/labs_outdoor_dataset_tutorial.ipynb) </br>
+[NetVLAD](https://github.com/Nanne/pytorch-NetVlad) </br>
+[SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork) </br>
 
