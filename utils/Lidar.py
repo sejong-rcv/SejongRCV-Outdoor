@@ -94,7 +94,7 @@ class Lidar_parse :
         cam_pnts=cam_pnts[front]
         merged_pnts= merged_pnts[front]
 
-        # ignore points further than 50 meters
+        # ignore points further than 150 meters
         further = cam_pnts[:,2] < 150
         uv = uv[further]
         cam_pnts=cam_pnts[further]
