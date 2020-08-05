@@ -12,7 +12,7 @@ from tqdm import tqdm
 from scipy import spatial
 
 from utils.Lidar import Lidar_parse
-from utils.naver import Naver_Datasets_yeouido_IMG, yeouido_Naver_Datasets, Test_Naver_Datasets_IMG, collate_fn
+from utils.naver import Naver_Datasets_yeouido_IMG, Naver_Pangyo_IMG, collate_fn
 from utils.utils import *
 
 from utils import retrieval
@@ -90,8 +90,11 @@ if __name__ == "__main__":
     #``````````````````````````````````
 
     print("===> Loading Dataset")
-    dataset = yeouido_Naver_Datasets(input_transform=input_transform)
-    dataset_img = Naver_Datasets_yeouido_IMG(input_transform=input_transform)
+    if place is 'pangyo' :
+        dataset_img = Naver_Datasets_yeouido_IMG(input_transform=input_transform)
+    else :
+        dataset_img = Naver_Pangyo_IMG(input_transform=input_transform)
+        
     imgDataLoader = DataLoader(dataset_img, num_workers=ret['workers'], batch_size=ret['cacheBatchSize'], shuffle=False, pin_memory=True)
     print("Done")
     
