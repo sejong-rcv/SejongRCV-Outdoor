@@ -135,8 +135,6 @@ if __name__ == "__main__":
                 sub_file_list = sorted(glob.glob(file_list[i]+"*_L.png"))
                 
                 for tt in range(len(sub_file_list)) :
-                    if tt != 0 :
-                        continue
                         
                     print(sub_file_list[tt])
                     odmetry = np.loadtxt(os.path.join(odmetry_list[i]),delimiter = ' ').reshape(-1,4,4)
@@ -153,9 +151,6 @@ if __name__ == "__main__":
                     for indexx, candidate in enumerate(candidates) :
 
                         for ii in range(len(candidate)) :
-                            
-                            if ii != 0 :
-                                continue
                                 
                             match_id = candidate[ii]
                             
