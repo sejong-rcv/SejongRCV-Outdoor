@@ -3,14 +3,14 @@
 
 ![image](https://user-images.githubusercontent.com/44772344/89431605-203c6680-d77b-11ea-9107-1093d311e3d4.png)
 
-## How to run
+### How to run
 
-### test
+#### test
 ```
 OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeouido] --top_k 10 --DB_ROOT (DB_ROOT)
 ```
 
-## Config.json
+### Config.json
 > NetVLAD, SuperGlue, APGeM을 설정할 수 있습니다.
 ```
 {   
@@ -69,7 +69,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 }
 
 ```
-## Data Tree
+### Data Tree
 ```
 +-- data
 |   +-- pangyo_pose_total.npy  pangyo_position_total.npy  yeouido_pose_total.npy  yeouido_position_total.npy
@@ -118,3 +118,11 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 |                   +-- ...
 |               +-- pangyo**
 ```
+
+### Reference
+
+[NAVER LABS DATA](https://challenge.naverlabs.com/)
+[Preprocessing](https://github.com/naverlabs/mapping-and-localization-challenge/blob/master/labs_outdoor_dataset_tutorial.ipynb)
+[NetVLAD](https://github.com/Nanne/pytorch-NetVlad)
+[SuperGlue](https://github.com/magicleap/SuperGluePretrainedNetwork)
+
