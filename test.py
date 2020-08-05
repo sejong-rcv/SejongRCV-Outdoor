@@ -11,12 +11,13 @@ import numpy as np
 from tqdm import tqdm
 from scipy import spatial
 
-from Lidar import Lidar_parse
-from naver import Naver_Datasets_yeouido_IMG, yeouido_Naver_Datasets, Test_Naver_Datasets_IMG, collate_fn
-from utils import *
-import retrieval
-from pose_estimation import pnp
-import netvlad
+from utils.Lidar import Lidar_parse
+from utils.naver import Naver_Datasets_yeouido_IMG, yeouido_Naver_Datasets, Test_Naver_Datasets_IMG, collate_fn
+from utils.utils import *
+
+from utils import retrieval
+from utils.pose_estimation import pnp
+from models import netvlad
 from models.matching import Matching
 
 parser = argparse.ArgumentParser(description='pytorch-NetVlad')
@@ -43,7 +44,6 @@ img_dir = '{}/train/images/left'.format(place)
 img_list_txt = "{}_images_list_total.txt".format(place)
 
 if opt.ensemble:
-    print("ensembla!!!!!!@!@!@!@!@!@")
     pickle_name = 'Total_{}_knn_pickle_ensemble'.format(place)
     DB_cache_name = 'Total_{}_DB_cache_ensemble.hdf5'.format(place)
 else:
