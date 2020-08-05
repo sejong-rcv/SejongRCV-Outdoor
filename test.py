@@ -115,9 +115,9 @@ if __name__ == "__main__":
             print("Model load Done")
             
             if opt.ensemble:
-                knn = gdes.make_cache( DB_cache_name, pickle_name, model, dataset, imgDataLoader, model1, model2 )
+                knn = gdes.make_cache( DB_cache_name, pickle_name, model, imgDataLoader, model1, model2 )
             else:   
-                knn = gdes.make_cache( DB_cache_name, pickle_name, model, dataset, imgDataLoader )
+                knn = gdes.make_cache( DB_cache_name, pickle_name, model, imgDataLoader )
             
             print("===>Predicting")
             
