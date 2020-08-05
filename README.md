@@ -5,7 +5,7 @@ NAVER LABS Mapping &amp; Localization Challenge
 
 ### test
 ```
-OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeuido] --top_k 10 --DB_ROOT (DB_ROOT)
+OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeouido] --top_k 10 --DB_ROOT (DB_ROOT)
 ```
 
 ## Config.json
@@ -74,8 +74,8 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 |   +-- naver
 |       +-- submit_json.json
 |       +-- centriods
-|           +-- GeM_2_Pretrained_Total_DB_cache.hdf5
-|           +-- GeM_2_Pretrained_Total_knn_pickle
+|           +-- Total_pangyo_DB_cache.hdf5
+|           +-- Total_pangyo_knn_pickle
 |           +-- Total_yeouido_DB_cache.hdf5
 |           +-- Total_yeouido_knn_pickle
 |       +-- yeouido
