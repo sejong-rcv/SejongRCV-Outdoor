@@ -75,6 +75,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 |   +-- pangyo_pose_total.npy  pangyo_position_total.npy  yeouido_pose_total.npy  yeouido_position_total.npy
 |   +-- naver
 |       +-- submit_json.json
+|       +-- pangyo_images_list_total.txt yeouido_images_list_total.txt
 |       +-- centriods
 |           +-- Total_pangyo_DB_cache.hdf5
 |           +-- Total_pangyo_knn_pickle
