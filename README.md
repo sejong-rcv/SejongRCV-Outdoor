@@ -1,5 +1,5 @@
 # SejongRCV-Outdoor
-NAVER LABS Mapping &amp; Localization Challenge
+[NAVER LABS Mapping &amp; Localization Challenge](challenge.naverlabs.com/leaderboard)
 
 ![image](https://user-images.githubusercontent.com/44772344/89431605-203c6680-d77b-11ea-9107-1093d311e3d4.png)
 
