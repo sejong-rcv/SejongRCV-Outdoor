@@ -127,8 +127,6 @@ if __name__ == "__main__":
                 max_match = 0
                 max_index = 0
                 max_query = 0
-                max_inliner = 0
-                max_xyz = 0
                 sub_file_list = sorted(glob.glob(file_list[i]+"*_L.png"))
                 
                 for tt in range(len(sub_file_list)) :
@@ -149,30 +147,30 @@ if __name__ == "__main__":
                         for ii in range(len(candidate)) :
 
                             match_id = candidate[ii]
+                            
                             img_candidate_path = os.path.join(DB_ROOT, img_dir, images[match_id])
          
                             query_xy, db_xy, mconf = matching_2d(query_path, img_candidate_path, matching, device, scale=True)
                             
-                            good_match_3d_point, fileter_query_xy = Lidar.matching_2d_3d(int(images[max_index][:-4]), query_xy, db_xy)
+                            if len(mkpts0[mconf>0.7]) > max_match :
+                                max_match = len(query_xy)
+                                max_index = match_id
+                                max_qeury = tt
+                            elif len(mkpts0[mconf>0.7]) == max_match and max_query < tt :
+                                max_match = len(query_xy)
+                                max_index = match_id
+                                max_qeury = tt
+                
+                query_path = sub_file_list[max_qeury]
+                img_candidate_path = os.path.join(root,img_dir,images[max_index])
+                query_xy, db_xy, mconf = matching_2d(query_path, img_candidate_path, matching, device, scale=True)
+                good_match_3d_point, fileter_query_xy = Lidar.matching_2d_3d(int(images[max_index][:-4]), query_xy, db_xy)
 
-                            pred_query_qwxyz, pred_query_xyz, inlier = pnp(good_match_3d_point, fileter_query_xy,pose, int(images[max_index][:-4]),odmetry, 49-tt, LCam_K, LCam_RT)
-
-                            if inlier is not None :
-                                if max_inliner < len(inlier) :
-                                    max_inliner = len(inlier)
-                                    max_match = pred_query_qwxyz
-                                    max_xyz = pred_query_xyz
-                            if ii >= len(candidate)-1 :
-                                if max_inliner > 100 :
-                                    set_name = file_list[i][25:33]
-                                    json_data = dump_submit(json_data, out_path, place, set_name, \
-                                        query_qwxyz=max_match, query_xyz=max_index)
-                                    pnp_flag = 1
-                                    break
-
-                            set_name = file_list[i][26:35]
-                            json_data = dump_submit(json_data, out_path, place, set_name, \
-                                query_qwxyz=pred_query_qwxyz, query_xyz=pred_query_xyz)
+                pred_query_qwxyz, pred_query_xyz, inlier = pnp(good_match_3d_point, fileter_query_xy,pose, int(images[max_index][:-4]),odmetry, 49-tt, LCam_K, LCam_RT)
+                    
+                set_name = file_list[i][25:33]
+                json_data = dump_submit(json_data, out_path, place, set_name, \
+                            query_qwxyz=pred_query_qwxyz, query_xyz=pred_query_xyz)
 
     
 print("Done")
