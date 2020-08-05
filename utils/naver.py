@@ -24,8 +24,8 @@ yeouido_position_npy = "./data/yeouido_position_total.npy"
 
 #pangyo 
 img_dir = 'pangyo/train/images/left' 
-img_list_txt = "pangyo_list_total.txt"
-position_npy = "./data/position_total.npy"
+img_list_txt = "pangyo_images_list_total.txt"
+position_npy = "./data/pagnyo_position_total.npy"
 
 
 class kNN_GPU():
@@ -142,30 +142,8 @@ class New_idea_Naver_Datasets_IMG(data.Dataset):
 
     def __len__(self):
         return len(self.images)
-
-class Naver_Pangyo_IMG(data.Dataset):
-    def __init__(self, input_transform=None):
-
-        super().__init__()
-
-        self.img_list = join(root, "pangyo_test_list_Left.txt")
-        self.images = [e.strip() for e in open(self.img_list)]
-        self.input_transform = input_transform()
-
-    def __getitem__(self, index):
-        
-        path = self.images[index]
-        img = Image.open(path)
-
-        if self.input_transform:
-            img = self.input_transform(img)
-
-        return img, path, index
-
-    def __len__(self):
-        return len(self.images)
     
-class Naver_Datasets_IMG(data.Dataset):
+class Naver_Pangyo_IMG(data.Dataset):
     def __init__(self, input_transform=None):
 
         super().__init__()
