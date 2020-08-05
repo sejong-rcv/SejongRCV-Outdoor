@@ -90,10 +90,14 @@ if __name__ == "__main__":
     #``````````````````````````````````
 
     print("===> Loading Dataset")
-    if place is 'pangyo' :
+    
+    if place == 'pangyo' :
+        dataset_img = Naver_Pangyo_IMG(input_transform=input_transform)
+    elif place == 'yeouido' :
         dataset_img = Naver_Datasets_yeouido_IMG(input_transform=input_transform)
     else :
-        dataset_img = Naver_Pangyo_IMG(input_transform=input_transform)
+        print("Dataset Error")
+        sys.exit(1)
         
     imgDataLoader = DataLoader(dataset_img, num_workers=ret['workers'], batch_size=ret['cacheBatchSize'], shuffle=False, pin_memory=True)
     print("Done")
