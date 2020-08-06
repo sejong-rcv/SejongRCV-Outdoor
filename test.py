@@ -25,7 +25,6 @@ parser.add_argument('--checkpoint', type=str, default = None)
 parser.add_argument('--place', type=str, default = 'yeouido')
 parser.add_argument('--DB_ROOT', type=str, default = './data/naver')
 parser.add_argument('--savePath', type=str, default = './netvlad_checkpoints')
-parser.add_argument('--output_json', type=str, default = 'submit_yeouido_pretrained_odometry')
 parser.add_argument('--defualt_json', type=str, default = 'submit_example')
 parser.add_argument('--top_k', type=int, default = 10 )
 parser.add_argument('--pretrained', type=int, default = 1)
@@ -51,7 +50,8 @@ else:
     DB_cache_name = 'Total_{}_DB_cache.hdf5'.format(place)
 
 file_path = join(DB_ROOT, "{}.json".format(opt.defualt_json))
-out_path = join(DB_ROOT, "{}.json".format(opt.output_json))
+json_out = "submit_" + place + "_"
+out_path = join(DB_ROOT, "{}.json".format(json_out))
 
 file_list = sorted(glob.glob(join( DB_ROOT, place, 'test/{}*/'.format(place) )))
 odmetry_list = sorted(glob.glob(join( DB_ROOT, place, 'test/**/odometry.txt' )))
@@ -182,8 +182,7 @@ if __name__ == "__main__":
                     print("Dataset Error")
                     sys.exit(1)
             
-            
-            json_data = dump_submit(json_data, out_path, place, set_name, \
+                json_data = dump_submit(json_data, out_path, place, set_name, \
                         query_qwxyz=pred_query_qwxyz, query_xyz=pred_query_xyz)
 
     
