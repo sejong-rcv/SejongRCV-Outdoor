@@ -10,6 +10,12 @@
 OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeouido] --top_k 10 --DB_ROOT (DB_ROOT)
 ```
 
+### Library
+> numpy
+> pytorch
+> sickitlearn
+> pyquternion
+
 ### Config.json
 > NetVLAD, SuperGlue, APGeM을 설정할 수 있습니다.
 ```
