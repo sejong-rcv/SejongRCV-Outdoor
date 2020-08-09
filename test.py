@@ -158,12 +158,12 @@ if __name__ == "__main__":
          
                             query_xy, db_xy, mconf = matching_2d(query_path, img_candidate_path, matching, device, scale=True)
                             
-                            if len(query_xy[mconf>0.7]) > max_match :
-                                max_match = len(query_xy[mconf>0.7])
+                            if len(query_xy) > max_match :
+                                max_match = len(query_xy)
                                 max_index = match_id
                                 max_qeury = tt
                             elif len(query_xy[mconf>0.7]) == max_match and max_query < tt :
-                                max_match = len(query_xy[mconf>0.7])
+                                max_match = len(query_xy)
                                 max_index = match_id
                                 max_qeury = tt
                 
