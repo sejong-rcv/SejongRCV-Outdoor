@@ -8,7 +8,7 @@
 
 ### How to run
 
-##### 본 챌린지에서는 [NetVLAD](https://github.com/Nanne/pytorch-NetVlad)에 공개된 피츠버그 데이터셋 [Pretrained Model](https://drive.google.com/open?id=17luTjZFCX639guSVy00OUtzfTQo4AMF2)을 사용하 추가적인 NetVLAD 학습 코드를 제공하지 않습니다.
+##### [NetVLAD](https://github.com/Nanne/pytorch-NetVlad)에 공개된 피츠버그 데이터셋 [Pretrained Model](https://drive.google.com/open?id=17luTjZFCX639guSVy00OUtzfTQo4AMF2)을 사용하 추가적인 NetVLAD 학습 코드를 제공하지 않습니다.
 
 ### test
 ```
