@@ -22,7 +22,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 > pyquternion </br>
 
 ### Config.json
-> NetVLAD, SuperGlue를 설정할 수 있으며, 추가로 APGeM이 앙상블된 모델도 옵션으로 수정 가능합니다. </br> (챌린지에서는 NetVLAD와 SueprGlue만 사용)
+> NetVLAD, SuperGlue를 설정할 수 있으며, 추가로 APGeM이 앙상블된 모델도 옵션으로 수정 가능합니다. </br> (챌린지에서는 NetVLAD와 SueprGlue만 사용한 결과입니다.)
 ```
 {   
     "SuperGlue":
