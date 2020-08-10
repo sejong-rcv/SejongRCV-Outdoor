@@ -10,7 +10,7 @@
 
 ##### 해당 코드는 추가적인 학습 코드를 제공하지 않으며, [NetVLAD](https://github.com/Nanne/pytorch-NetVlad)에서 제공하는 피츠버그 데이터셋 Pretrained Model을 사용하고 있습니다. 
 
-#### test
+### test
 ```
 OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (checkpoint_path) --place [pangyo/yeouido] --top_k 10 --DB_ROOT (DB_ROOT)
 ```
@@ -22,7 +22,7 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 > pyquternion </br>
 
 ### Config.json
-> NetVLAD, SuperGlue를 설정할 수 있으며, 추가로 APGeM이 앙상블된 모델도 옵션으로 수정 가능합니다. (챌린지에서는 NetVLAD와 SueprGlue만 사용)
+> NetVLAD, SuperGlue를 설정할 수 있으며, 추가로 APGeM이 앙상블된 모델도 옵션으로 수정 가능합니다. </br> (챌린지에서는 NetVLAD와 SueprGlue만 사용)
 ```
 {   
     "SuperGlue":
