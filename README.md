@@ -8,7 +8,7 @@
 
 ### How to run
 
-##### 해당 코드는 추가적인 학습 코드를 제공하지 않으며, [NetVLAD](https://github.com/Nanne/pytorch-NetVlad)에서 제공하는 피츠버그 데이터셋 Pretrained Model을 사용하고 있습니다. 
+##### 해당 코드는 [NetVLAD](https://github.com/Nanne/pytorch-NetVlad)에서 제공하는 피츠버그 데이터셋 [Pretrained Model](https://drive.google.com/open?id=17luTjZFCX639guSVy00OUtzfTQo4AMF2)을 사용하고 있어, 학습 코드를 제공하지 않습니다.
 
 ### test
 ```
