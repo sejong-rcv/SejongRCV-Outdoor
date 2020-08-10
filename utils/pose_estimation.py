@@ -40,7 +40,6 @@ def pnp(points_3D, points_2D, pose, index, odometry, start, LCam_K, LCam_RT):
     solvRR,_ = cv2.Rodrigues(solvR)
     solvRR_inv = np.linalg.inv(solvRR)
     solvtt = -np.matmul(solvRR_inv,solvt)
-    rot = cv2.Rodrigues(solvRR_inv)[0].squeeze(1)
     predict_pose = np.r_[np.c_[solvRR_inv,solvtt],np.array([[0,0,0,1]])]
     
     predict_pose = make_odometry(predict_pose,odometry, start=start)@inv(LCam_RT)
