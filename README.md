@@ -16,10 +16,14 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 ```
 
 ### Library
-> numpy </br>
-> pytorch </br>
-> sickitlearn </br>
-> pyquternion </br>
+> PyTorch >= 1.0 </br>
+> torchvision >= 0.5.0 <\br>
+> OpenCV >= 3.4 </br>
+> SciPy >= 1.4.1 <\br>
+> Matplotlib >= 3.1 </br>
+> scikit-learn >= 0.20.1 </br>
+> pyquaternion >= 0.9.2 </br>
+> NumPy >= 1.18 </br>
 
 ### Config.json
 > NetVLAD, SuperGlue를 설정할 수 있으며, 추가로 APGeM이 앙상블된 모델도 옵션으로 수정 가능합니다. </br> (챌린지에서는 NetVLAD와 SueprGlue만 사용한 결과입니다.)
@@ -69,13 +73,8 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
         "start_epoch" : 0,
         "nEpochs" : 30,
         "margin" : 0.1
-    },
-    
-    "APGeM":
-    {   
-        "Path1" : "../jobs/weight/Resnet101-AP-GeM-LM18.pt",
-        "Path2" : "../jobs/weight/Resnet-101-AP-GeM.pt"
     }
+ 
 
 }
 
