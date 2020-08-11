@@ -17,9 +17,9 @@ OMP_NUM_THREADS=1 CUDA_VISIBLE_DEVICES=(GPU_NUM) python test.py --checkpoint (ch
 
 ### Library
 > PyTorch >= 1.0 </br>
-> torchvision >= 0.5.0 <\br>
+> torchvision >= 0.5.0 </br>
 > OpenCV >= 3.4 </br>
-> SciPy >= 1.4.1 <\br>
+> SciPy >= 1.4.1 </br>
 > Matplotlib >= 3.1 </br>
 > scikit-learn >= 0.20.1 </br>
 > pyquaternion >= 0.9.2 </br>
