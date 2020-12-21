@@ -78,34 +78,6 @@ class Naver_Yeouido_IMG(data.Dataset):
 
     def __len__(self):
         return len(self.images)
-
-class Naver_Indoor_B1_IMG(data.Dataset):
-    def __init__(self, input_transform=None):
-
-        super().__init__()
-        
-        img_train_list_path = join("./data/indoor/b1/train/csv/v2/train_val/train_b1.csv")
-        img_val_list_path = join("./data/indoor/b1/train/csv/v2/train_val/val_b1.csv")
-        img_train_list = pd.read_csv(img_train_list_path)
-        img_val_list = pd.read_csv(img_val_list_path)
-        
-        self.images = np.array(img_train_list['id']).tolist()
-        self.date = np.array(img_train_list['date']).tolist()
-        self.input_transform = input_transform()
-
-    def __getitem__(self, index):
-        
-        img_name = self.images[index] +'.jpg'
-        path = "./data/indoor/b1/train/" + self.date[index] + '/images/' + img_name
-        img = Image.open(path)
-
-        if self.input_transform:
-            img = self.input_transform(img)
-
-        return img, index
-
-    def __len__(self):
-        return len(self.images)
     
 class New_idea_Naver_Datasets_IMG(data.Dataset):
     def __init__(self, input_transform=None):
