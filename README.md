@@ -1,9 +1,11 @@
 # SejongRCV-Outdoor
-[NAVER LABS Mapping &amp; Localization Challenge](challenge.naverlabs.com/leaderboard)
+[NAVER LABS Mapping &amp; Localization Challenge](https://challenge.naverlabs.com/leaderboard)
+
+- 논문 : [[PDF](https://github.com/sejong-rcv/SejongRCV-Outdoor/files/5918675/39INUA.C.PDF)] 
+- 발료 자료 : [[PDF](https://github.com/sejong-rcv/SejongRCV-Outdoor/files/5918683/default.pdf)]
+- 발표 영상 : [[YouTube](https://youtu.be/3EP2x_bkTOo)]
 
 ![image](https://user-images.githubusercontent.com/44772344/89431605-203c6680-d77b-11ea-9107-1093d311e3d4.png)
-
-
 
 
 ### How to run
