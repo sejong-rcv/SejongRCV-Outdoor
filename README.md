@@ -1,7 +1,7 @@
 # SejongRCV-Outdoor
 [NAVER LABS Mapping &amp; Localization Challenge](https://challenge.naverlabs.com/leaderboard)
 
-- 논문 : [[PDF](https://github.com/sejong-rcv/SejongRCV-Outdoor/files/5918675/39INUA.C.PDF)] 
+- 논문 : [[PDF](https://github.com/sejong-rcv/SejongRCV-Outdoor/files/5918700/3rd.Place.Solution.to.NAVER.LABS.Mapping.and.Localization.Challenge.2020.Outdoor.Track.pdf)] 
 - 발료 자료 : [[PDF](https://github.com/sejong-rcv/SejongRCV-Outdoor/files/5918683/default.pdf)]
 - 발표 영상 : [[YouTube](https://youtu.be/3EP2x_bkTOo)]
 
